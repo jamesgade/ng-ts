@@ -1,0 +1,52 @@
+"use strict";
+// normal function
+function add(num1, num2) {
+    return num1 + num2;
+}
+// console.log(add(1, 2));
+// arrow inline function
+const sub = (num1, num2) => num1 - num2;
+// console.log(sub(1, 2));
+// variable function
+const mul = function (num1, num2) {
+    return num1 * num2;
+};
+// console.log(mul(1, 2))
+// functon with default/required parameter
+const div = (num1, range = 100) => num1 / range;
+// console.log(div(5, 50));
+// console.log(div(5));
+// function with optional parameter
+const perc = (num1, outOf, percent) => {
+    return percent ? (num1 / outOf) * percent : (num1 / outOf) * 100;
+};
+// console.log(perc(5, 50));
+// console.log(perc(1, 50, 500));
+// function with rest parameter
+const addAll = (num1, num2, ...otherNumbers) => {
+    return num1 + num2 + otherNumbers.reduce((item, val) => item + val, 0);
+};
+// console.log(addAll(1, 3, 5, 2, 4));
+// let extra = [3, 4, 5];
+// console.log(addAll(1, 2, ...extra));
+// console.log(addAll(5, 4, ...[3, 2, 1]));
+// generic function
+function concatItems(items) {
+    return new Array().concat(items);
+}
+let concatNumbers = concatItems([1, 2, 3, 4, 5]);
+// or
+let concatStrings = concatItems(['a', 'b', 'c', 'd', 'e']);
+// or
+let concatAny = concatItems(['Hello', 1, 2, 3]);
+// console.log(concatAny);
+// geeric arrow function
+const joinItems = (items) => {
+    return items.join('');
+};
+let joinNumbers = concatItems([1, 2, 3, 4, 5]);
+// or
+let joinStrings = concatItems(['a', 'b', 'c', 'd', 'e']);
+// or
+let joinAny = concatItems(['Hello', 1, 2, 3]);
+// console.log(joinItems(joinAny));
